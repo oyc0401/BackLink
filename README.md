@@ -4,8 +4,8 @@
 [![Build](https://github.com/oyc0401/BackLink/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/oyc0401/BackLink/actions/workflows/npm-publish.yml)
 [![MIT license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/oyc0401/backlink/blob/main/LICENSE)
 
-> **Backlink** 는 [**Comlink**](https://github.com/GoogleChromeLabs/comlink)에서 영감을 받아 개발한
-> 웹 워커에서 메인 스레드로의 통신을 간편하게 만들어주는 TypeScript 라이브러리입니다.
+> **Backlink** 는 [**Comlink**](https://github.com/GoogleChromeLabs/comlink)에서 영감을 받아 개발한 TypeScript 라이브러리로,
+> 웹 워커에서 메인 스레드로의 통신을 간편하게 만들어줍니다.
 
 ### 특징
 
