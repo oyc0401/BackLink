@@ -6,7 +6,8 @@
   <a href="https://github.com/oyc0401/backlink/blob/main/LICENSE"><img alt="MIT license" src="https://img.shields.io/github/license/oyc0401/backlink.svg?style=flat-square"></a>
 </p>
 
-> **Backlink** is a TypeScript library that makes communication from Web Workers to the main thread much simpler.
+> **Backlink** is a TypeScript library inspired by [**Comlink**](https://github.com/GoogleChromeLabs/comlink), 
+> designed to simplify communication from Web Workers to the main thread.
 
 ### Features
 

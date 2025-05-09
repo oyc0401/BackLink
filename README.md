@@ -6,7 +6,8 @@
   <a href="https://github.com/oyc0401/backlink/blob/main/LICENSE"><img alt="MIT license" src="https://img.shields.io/github/license/oyc0401/backlink.svg?style=flat-square"></a>
 </p>
 
-> Backlink는 웹 워커에서 메인 스레드로의 통신을 더 간편하게 만들어주는 TypeScript 라이브러리입니다.
+> **Backlink** 는 [**Comlink**](https://github.com/GoogleChromeLabs/comlink)에서 영감을 받아 개발한
+> 웹 워커에서 메인 스레드로의 통신을 간편하게 만들어주는 TypeScript 라이브러리입니다.
 
 ### 특징
 
