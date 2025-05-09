@@ -6,6 +6,7 @@
     "declaration": true,
     "outDir": "./dist",
     "strict": true,
+    "lib": ["esnext", "webworker"],
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true

@@ -7,6 +7,8 @@
 ///////////////////////
 const TRANSFER = Symbol("backlink.transfer");
 
+declare const self: DedicatedWorkerGlobalScope;
+
 type WithTransfer<T> = T & { [TRANSFER]?: Transferable[] };
 
 /** 인자에 붙일 Transferable 헬퍼 */
@@ -99,7 +101,7 @@ export function expose<T extends Record<string, any>>(worker: Worker, api: T) {
         worker.postMessage({ type: "RET", id, value }),
       );
     } else if (type === "GET") {
-      const value = prop.split(".").reduce((o, k) => o?.[k], api);
+      const value = prop.split(".").reduce((o: any, k: string) => o?.[k], api);
       worker.postMessage({ type: "RET", id, value });
     }
   };

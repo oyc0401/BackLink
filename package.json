@@ -1,7 +1,6 @@
-
 {
   "name": "backlink",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TypeScript Worker communication library",
   "main": "dist/backlink.js",
   "types": "dist/backlink.d.ts",
@@ -12,9 +11,26 @@
     "build": "tsc",
     "prepublishOnly": "npm run build"
   },
-  "keywords": ["worker", "typescript", "communication"],
-  "author": "",
+  "keywords": [
+    "worker",
+    "typescript",
+    "communication",
+    "webworker",
+    "comlink"
+  ],
+  "author": "Yuchan Oh <oyc0401@gmail.com> (https://github.com/oyc0401)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oyc0401/backlink.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oyc0401/backlink/issues"
+  },
+  "homepage": "https://github.com/oyc0401/backlink#readme",
+  "engines": {
+    "node": ">=18"
+  },
   "devDependencies": {
     "typescript": "^5.0.0",
     "@types/node": "^20.0.0",
