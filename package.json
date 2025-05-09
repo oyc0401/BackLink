@@ -1,0 +1,23 @@
+
+{
+  "name": "backlink",
+  "version": "1.0.0",
+  "description": "TypeScript Worker communication library",
+  "main": "dist/backlink.js",
+  "types": "dist/backlink.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["worker", "typescript", "communication"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.1"
+  }
+}
