@@ -1,10 +1,8 @@
 # Backlink
 
-<p align="center">
-  <a href="https://www.npmjs.com/package/backlink"><img alt="npm version" src="https://img.shields.io/npm/v/backlink.svg?style=flat-square"></a>
-  <a href="https://github.com/oyc0401/backlink/actions"><img alt="CI status" src="https://img.shields.io/github/actions/workflow/status/oyc0401/backlink/ci.yml?branch=main&style=flat-square"></a>
-  <a href="https://github.com/oyc0401/backlink/blob/main/LICENSE"><img alt="MIT license" src="https://img.shields.io/github/license/oyc0401/backlink.svg?style=flat-square"></a>
-</p>
+[![npm version](https://img.shields.io/npm/v/backlink.svg)](https://www.npmjs.com/package/backlink)
+[![Build](https://github.com/oyc0401/BackLink/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/oyc0401/BackLink/actions/workflows/npm-publish.yml)
+[![MIT license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/oyc0401/backlink/blob/main/LICENSE)
 
 > **Backlink** 는 [**Comlink**](https://github.com/GoogleChromeLabs/comlink)에서 영감을 받아 개발한
 > 웹 워커에서 메인 스레드로의 통신을 간편하게 만들어주는 TypeScript 라이브러리입니다.
