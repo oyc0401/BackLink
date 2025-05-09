@@ -1,6 +1,6 @@
 {
   "name": "callink",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Worker → Main communication library inspired by Comlink",
   "main": "dist/callink.js",
   "types": "dist/callink.d.ts",
@@ -24,7 +24,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/oyc0401/callink.git"
+    "url": "git+https://github.com/oyc0401/callink.git"
   },
   "bugs": {
     "url": "https://github.com/oyc0401/callink/issues"

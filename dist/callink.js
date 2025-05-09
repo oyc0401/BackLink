@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Callink = void 0;
 exports.transfer = transfer;
-exports.wrap = wrap;
-exports.expose = expose;
+exports.connect = connect;
+exports.provide = provide;
 const TRANSFER = Symbol("callink.transfer");
 /** 인자에 붙일 Transferable 헬퍼 */
 function transfer(value, list) {
@@ -13,7 +13,7 @@ function transfer(value, list) {
 ///////////////////////
 // Proxy → Worker 호출
 ///////////////////////
-function wrap() {
+function connect() {
     /* ---------- (1) 요청-응답 ID 테이블 ---------- */
     let seq = 0; // 메시지 ID
     const pending = new Map();
@@ -66,7 +66,7 @@ function wrap() {
         get: (_t, prop) => build(prop),
     });
 }
-function expose(worker, api) {
+function provide(worker, api) {
     worker.onmessage = ({ data }) => {
         const { type, prop, args, id } = data;
         if (type === "CALL") {
@@ -80,4 +80,4 @@ function expose(worker, api) {
         }
     };
 }
-exports.Callink = { wrap, expose, transfer };
+exports.Callink = { connect, provide, transfer };

@@ -13,58 +13,48 @@
 * **Simple usage** – Call main-thread functions directly from a Worker, just like local functions.
 * **Transferable support** – Supports high-performance transfer of `ArrayBuffer`, `OffscreenCanvas`, and other transferable objects.
 
-### Quick Start
-
-#### 1. Installation
+## Install
 
 ```bash
 npm install callink
 ```
 
-#### 2. Expose API on the Main Thread
+## Example
 
+**main.ts**
 ```ts
-// main.ts
 import { Callink } from "callink";
 
-const api = {
-  log(msg: string) {
-    console.log(`[worker] ${msg}`);
-  },
-  now() {
-    return Date.now();
+const obj = {
+  counter: 0,
+  inc() {
+    this.counter++;
   },
 };
 
-const worker = new Worker(new URL("./worker.ts", import.meta.url), { type: "module" });
-Callink.expose(worker, api);
+const worker = new Worker("worker.js");
+Callink.provide(worker, api);
 ```
 
-#### 3. Call from the Worker
-
-```ts
-// worker.ts
-import { Callink } from "callink";
-
-const main = Callink.wrap<typeof api>();
-
-(async () => {
-  await main.log("Hello from the worker!");
-  const t = await main.now();
-
-  console.log("Timestamp from main thread:", t);
-})();
-```
-
-### Using Transferables
-
+**worker.ts**
 ```ts
 import { Callink } from "callink";
 
-const main = Callink.wrap<{ recv(buf: ArrayBuffer): void }>();
+async function init() {
+  const main = Callink.connect();
+  alert(`Counter: ${await main.counter}`);
+  await main.inc();
+  alert(`Counter: ${await main.counter}`);
+}
 
-const buf = new ArrayBuffer(2048);
-await main.recv(Callink.transfer(buf, [buf]));
+init();
+```
+
+### Transferable
+
+```ts
+const data = new Uint8Array([1, 2, 3, 4, 5]);
+await main.send(Callink.transfer(data, [data.buffer]));
 ```
 
 ### License

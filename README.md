@@ -13,58 +13,48 @@
 * **간단한 사용법** – 워커 안에서 메인 스레드 함수를 직접 호출하듯 사용할 수 있습니다
 * **전송 최적화 지원** – `ArrayBuffer`, `OffscreenCanvas` 등을 전송하는 Transferable을 지원합니다.
 
-### 빠른 시작
-
-#### 1. 설치
+## 설치
 
 ```bash
 npm install callink
 ```
 
-#### 2. 메인 스레드 API 공개
+## 예시
 
+**main.ts**
 ```ts
-// main.ts
 import { Callink } from "callink";
 
-const api = {
-  log(msg: string) {
-    console.log(`[worker] ${msg}`);
-  },
-  now() {
-    return Date.now();
+const obj = {
+  counter: 0,
+  inc() {
+    this.counter++;
   },
 };
 
-const worker = new Worker(new URL("./worker.ts", import.meta.url), { type: "module" });
-Callink.expose(worker, api);
+const worker = new Worker("worker.js");
+Callink.provide(worker, api);
 ```
 
-#### 3. 워커에서 호출
-
-```ts
-// worker.ts
-import { Callink } from "callink";
-
-const main = Callink.wrap<typeof api>();
-
-(async () => {
-  await main.log("안녕하세요, 메인!");
-  const t = await main.now();
-  
-  console.log("메인 타임스탬프:", t);
-})();
-```
-
-### Transferable 사용
-
+**worker.ts**
 ```ts
 import { Callink } from "callink";
 
-const main = Callink.wrap<{ recv(buf: ArrayBuffer): void }>();
+async function init() {
+  const main = Callink.connect();
+  alert(`Counter: ${await main.counter}`);
+  await main.inc();
+  alert(`Counter: ${await main.counter}`);
+}
 
-const buf = new ArrayBuffer(2048);
-await main.recv(Callink.transfer(buf, [buf]));
+init();
+```
+
+### Transferable
+
+```ts
+const data = new Uint8Array([1, 2, 3, 4, 5]);
+await main.send(Callink.transfer(data, [data.buffer]));
 ```
 
 ### 라이선스
