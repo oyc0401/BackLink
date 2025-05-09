@@ -1,7 +1,7 @@
 {
   "name": "backlink",
-  "version": "1.0.2",
-  "description": "TypeScript Worker communication library",
+  "version": "1.0.3",
+  "description": "A Worker → Main communication library inspired by Comlink",
   "main": "dist/backlink.js",
   "types": "dist/backlink.d.ts",
   "files": [
