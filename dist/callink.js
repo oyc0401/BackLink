@@ -1,16 +1,10 @@
 "use strict";
-/*-------------------------------------------------
-  backlink.ts
---------------------------------------------------*/
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Backlink = void 0;
+exports.Callink = void 0;
 exports.transfer = transfer;
 exports.wrap = wrap;
 exports.expose = expose;
-///////////////////////
-// 내부 심볼 & 헬퍼
-///////////////////////
-const TRANSFER = Symbol("backlink.transfer");
+const TRANSFER = Symbol("callink.transfer");
 /** 인자에 붙일 Transferable 헬퍼 */
 function transfer(value, list) {
     value[TRANSFER] = list;
@@ -86,4 +80,4 @@ function expose(worker, api) {
         }
     };
 }
-exports.Backlink = { wrap, expose, transfer };
+exports.Callink = { wrap, expose, transfer };

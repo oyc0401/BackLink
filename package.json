@@ -1,9 +1,9 @@
 {
-  "name": "backlink",
-  "version": "1.0.3",
+  "name": "callink",
+  "version": "1.0.0",
   "description": "A Worker → Main communication library inspired by Comlink",
-  "main": "dist/backlink.js",
-  "types": "dist/backlink.d.ts",
+  "main": "dist/callink.js",
+  "types": "dist/callink.d.ts",
   "files": [
     "dist"
   ],
@@ -24,12 +24,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/oyc0401/backlink.git"
+    "url": "https://github.com/oyc0401/callink.git"
   },
   "bugs": {
-    "url": "https://github.com/oyc0401/backlink/issues"
+    "url": "https://github.com/oyc0401/callink/issues"
   },
-  "homepage": "https://github.com/oyc0401/backlink#readme",
+  "homepage": "https://github.com/oyc0401/callink#readme",
   "engines": {
     "node": ">=18"
   },

@@ -1,11 +1,4 @@
-/*-------------------------------------------------
-  backlink.ts
---------------------------------------------------*/
-
-///////////////////////
-// 내부 심볼 & 헬퍼
-///////////////////////
-const TRANSFER = Symbol("backlink.transfer");
+const TRANSFER = Symbol("callink.transfer");
 
 declare const self: DedicatedWorkerGlobalScope;
 
@@ -107,4 +100,4 @@ export function expose<T extends Record<string, any>>(worker: Worker, api: T) {
   };
 }
 
-export const Backlink = { wrap, expose, transfer } as const;
+export const Callink = { wrap, expose, transfer } as const;
