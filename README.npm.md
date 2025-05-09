@@ -28,7 +28,7 @@ import { Callink } from "callink";
 const obj = {
   counter: 0,
   inc() {
-    this.counter++;
+    return this.counter++;
   },
 };
 
@@ -40,8 +40,9 @@ Callink.provide(worker, api);
 ```ts
 import { Callink } from "callink";
 
+const main = Callink.connect();
+
 async function init() {
-  const main = Callink.connect();
   alert(`Counter: ${await main.counter}`);
   await main.inc();
   alert(`Counter: ${await main.counter}`);
